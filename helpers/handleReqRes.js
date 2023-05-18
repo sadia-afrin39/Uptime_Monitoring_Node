@@ -2,7 +2,7 @@
  * Title: Handle Request Response
  * Description: Handle Resquest and response
  * Author: Sumit Saha ( Learn with Sumit )
- * Date: 11/15/2020
+ * Date: 15/5/2023
  *
  */
 
@@ -46,8 +46,7 @@ handler.handleReqRes = (req, res) => {
 
     req.on('end', () => {
         realData += decoder.end();
-        requestProperties.body = parseJSON(realData);
-
+        requestProperties.body = parseJSON(realData); //adding payload to therequestProperties object in JSON
         chosenHandler(requestProperties, (statusCode, payload) => {
             statusCode = typeof statusCode === 'number' ? statusCode : 500;
             payload = typeof payload === 'object' ? payload : {};

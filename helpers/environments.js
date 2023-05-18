@@ -1,12 +1,10 @@
 /*
  * Title: Environments
  * Description: Handle all environment related things
- * Author: Sumit Saha ( Learn with Sumit )
- * Date: 11/20/2020
+ * Author: Sadia Afrin Tarin ( Inspired by Learn with Sumit )
+ * Date: 15/5/2023
  *
  */
-
-// dependencies
 
 // module scaffolding
 const environments = {};
@@ -27,11 +25,11 @@ environments.production = {
 
 // determine which environment was passed
 const currentEnvironment =
-    typeof process.env.NODE_ENV === 'string' ? process.env.NODE_ENV : 'staging';
+    typeof (process.env.NODE_ENV) === 'string' ? process.env.NODE_ENV : 'staging';
 
 // export corresponding environment object
 const environmentToExport =
-    typeof environments[currentEnvironment] === 'object'
+    typeof (environments[currentEnvironment]) === 'object'
         ? environments[currentEnvironment]
         : environments.staging;
 

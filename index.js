@@ -2,7 +2,7 @@
  * Title: Uptime Monitoring Application
  * Description: A RESTFul API to monitor up or down time of user defined links
  * Author: Sadia Afrin Tarin ( Inspired by Learn with Sumit )
- * Date: 11/15/2020
+ * Date: 5/5/2023
  *
  */
 // dependencies

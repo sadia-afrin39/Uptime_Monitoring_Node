@@ -1,7 +1,7 @@
 /*
  * Title: Utilities
- * Description: Iportant utilities functions
- * Author: Sumit Saha ( Learn with Sumit )
+ * Description: Important utilities functions
+ *  Author: Sadia Afrin Tarin ( Inspired by Learn with Sumit )
  * Date: 16/5/2023
  *
  */
@@ -28,11 +28,30 @@ utilities.parseJSON = (jsonString) => {
 // hash string
 utilities.hash = (str) => {
     if (typeof str === 'string' && str.length > 0) {
-        console.log(environments, process.env.NODE_ENV);
+        //console.log(environments, process.env.NODE_ENV);
         const hash = crypto.createHmac('sha256', environments.secretKey)
         .update(str)
         .digest('hex');
         return hash;
+    }
+    return false;
+};
+
+// create random string
+utilities.createRandomString = (strlength) => {
+    let length = strlength;
+    length = typeof strlength === 'number' && strlength > 0 ? strlength : false;
+
+    if (length) {
+        const possiblecharacters = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        let output = '';
+        for (let i = 1; i <= length; i += 1) {
+            const randomCharacter = possiblecharacters.charAt(
+                Math.floor(Math.random() * possiblecharacters.length)
+            );
+            output += randomCharacter;
+        }
+        return output;
     }
     return false;
 };
